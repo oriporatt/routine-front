@@ -3,7 +3,7 @@ import { useState,useEffect ,useRef} from 'react'
 import { useNavigate } from 'react-router'
 import { useSelector ,useDispatch} from 'react-redux'
 
-import LinkLogo from '../assets/svgs/linkLogo.svg?react'
+import Routine from '../assets/svgs/Routine.svg?react'
 
 
 export function AppHeader() {
@@ -21,9 +21,9 @@ export function AppHeader() {
 					<img src="/img/menu.svg" alt="menu" className="menu-img"/>
 				</div> */}
 
-				<NavLink to={userId ? `/card?user=${userId}` : `/`} className="logo">
-					<LinkLogo/>
-					<p className="linky-logo">Linky<span></span></p>
+				<NavLink to="/" className="logo">
+					<Routine/>
+					<p className="linky-logo">Routine AI</p>
 				</NavLink>
 
 				{/* <nav>

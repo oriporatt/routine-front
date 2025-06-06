@@ -20,26 +20,28 @@
     .header-elements {
     
         display: grid;
-        height: 5rem;
+        height: 4rem;
         align-items: center;
         background-color: variables.$white;
         justify-items: center;
     
         .logo{
             display: flex;
-            gap:4px;
             text-decoration: none;
+            align-items: center;
+            gap:6px;
             svg{
-                height: 25px;
-                width: 25px;
+                height: 30px;
+                width: 30px;
                 align-self: center;
-                fill:rgb(63, 147, 242);
+                fill:variables.$black;
+                // fill:rgb(63, 147, 242);
             }
             .linky-logo{
                 font-family: 'Proximanova', sans-serif; 
                 color: variables.$black;
                 font-weight: 700;
-                font-size: functions.rem(40px);
+                font-size: functions.rem(30px);
                 letter-spacing:  -.04em;
                 margin: 0;
                 
