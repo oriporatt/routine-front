@@ -1,0 +1,104 @@
+@use "../setup/functions";
+@use "../setup/variables";
+@use "../setup/mixins";
+
+
+.app-footer{
+    margin-top: functions.rem(40px);
+
+    .footer-elements{
+        height: 100%;
+        .footer-line{
+            border-top:1px solid variables.$lightGray;
+        }
+
+        .elements-items{
+            min-height: functions.rem(72px);
+            @include mixins.for-mobile-layout{
+
+                display: grid;
+                grid-auto-flow: row;
+                grid-template-rows: auto auto auto;
+                justify-items: center;
+                    
+
+            
+            }
+            @include mixins.for-narrow-layout{
+                display: grid;
+                grid-template-columns: auto auto 1fr;
+                align-items: center;
+                justify-content: space-between;
+            }
+            @include mixins.for-normal-layout{
+                display: grid;
+                grid-template-columns: auto auto 1fr;
+                align-items: center;
+                justify-content: space-between;
+            }
+            @include mixins.for-wide-layout{
+                display: grid;
+                grid-template-columns: auto auto 1fr;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+
+            .skiller-logo-footer{
+
+                font-family: 'Proximanova', sans-serif; 
+                color: rgb(116, 118, 126);
+                font-weight: 700;
+                font-size: functions.rem(28px);
+                letter-spacing:  -.04em;
+                margin: 0;
+                span{
+                    padding-left: 2px;
+                    font-size: functions.rem(24px);
+                    font-family: 'Proximanova', sans-serif; 
+                    font-weight: bold;
+                    // -webkit-text-stroke: 1px #62646A; 
+                    // color: transparent;  
+    
+                }
+            }
+            .skiller-text-footer{
+                margin: 0;
+                font-family: "Macan", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size:functions.rem(14px); 
+                margin-left:functions.rem(24px); 
+                color: #B5B6BA; 
+                @include mixins.for-mobile-layout{
+                    margin-left: 0;
+                }
+
+
+            }
+            .svgs-links{
+                display: flex;
+                gap: 1rem;
+                justify-self: end;
+                @include mixins.for-mobile-layout{
+                    justify-self: center;
+                }
+                
+                .email{
+                    fill: rgb(116, 118, 126);
+                    height: 20px;
+                    width: 20px;
+                }
+                .linkdn{
+                    fill: rgb(116, 118, 126);
+                    height: 20px;
+                    width: 20px;  
+                }
+            }
+
+        }
+
+    }
+}
+
+
+
+

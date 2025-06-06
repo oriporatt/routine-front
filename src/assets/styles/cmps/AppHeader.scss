@@ -1,0 +1,88 @@
+@use "../setup/functions";
+@use "../setup/mixins";
+@use "../setup/variables";
+
+
+.app-header{
+
+
+    position: sticky;
+    top: 0;
+    // left: 0;
+    border-bottom: 1px solid #e0e0e0; 
+    width: 100%;
+    z-index: 70;
+    background-color: variables.$white;
+
+
+
+
+    .header-elements {
+    
+        display: grid;
+        height: 5rem;
+        align-items: center;
+        background-color: variables.$white;
+        justify-items: center;
+    
+        .logo{
+            display: flex;
+            gap:4px;
+            text-decoration: none;
+            svg{
+                height: 25px;
+                width: 25px;
+                align-self: center;
+                fill:rgb(63, 147, 242);
+            }
+            .linky-logo{
+                font-family: 'Proximanova', sans-serif; 
+                color: variables.$black;
+                font-weight: 700;
+                font-size: functions.rem(40px);
+                letter-spacing:  -.04em;
+                margin: 0;
+                
+                span{
+                    padding-left: 2px;
+                    color:rgb(63, 147, 242);
+                }
+
+            }
+
+        }
+
+    }
+
+    
+
+
+
+    @include mixins.for-mobile-layout{
+
+
+    }
+
+
+    //narrow : with search top option, with menu icon , small nav menu, no img
+    @include mixins.for-narrow-layout {
+
+
+    }
+
+    //normal : with search top option, no menu icon , big nav menu, with img
+    @include mixins.for-normal-layout {
+        .header-elements{
+            justify-items: start;
+            
+        }
+
+    }
+    // wide : with search top option, no menu icon , big nav menu, with img
+    @include mixins.for-wide-layout {
+        .header-elements{
+            justify-items: start;
+        }
+    }
+
+}

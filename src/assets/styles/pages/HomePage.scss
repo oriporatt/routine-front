@@ -1,0 +1,17 @@
+@use "../setup/functions";
+@use "../setup/mixins";
+@use "../setup/variables";
+
+
+.home-page{
+    
+    margin-top: functions.rem(80px);
+    @include mixins.for-narrow-layout{
+        grid-column: -1/1;
+    }
+    @include mixins.for-mobile-layout{
+        grid-column: -1/1;
+    }
+    
+}
+

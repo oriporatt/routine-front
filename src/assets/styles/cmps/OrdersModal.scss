@@ -1,0 +1,76 @@
+@use "../setup/functions";
+@use "../setup/mixins";
+@use "../setup/variables";
+
+
+.orders-modal{
+    position: absolute;
+    right: 0;
+    top:50px;
+    max-height: 500px;
+    background-color: variables.$white;
+    z-index: 120;
+    width: min(700px, 90vw);
+    display: flex;
+
+}
+.orders-modal-div{
+    margin: 0;
+    border-radius: 8px;
+    background-color: variables.$white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    display: grid;
+    .my-orders-list{
+        grid-row: 1;
+        max-height: 400px;
+        overflow-y: auto; // Enables vertical scrolling if content overflows
+
+    }
+
+    .close-modal-btn{
+        grid-row: 2;
+        color: variables.$black;
+        height: functions.rem(30px);
+        background-color: variables.$white;
+        font-size: functions.rem(12px);
+        font-weight: 700;
+        line-height: 100%;
+        border-radius: 4px;
+        border: 1px solid variables.$black ;
+        width: 150px;
+        height: 40px;
+        justify-self: center;
+        margin-bottom: 10px;
+        &:hover{
+            background-color: variables.$black ;
+            color: variables.$white;
+        }    
+    }
+
+    
+}
+
+
+
+@include mixins.for-mobile-layout {
+    .orders-modal{
+
+        position: fixed;
+        top: functions.rem(70px);
+        width: (90vw);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@include mixins.for-narrow-layout {
+    .orders-modal{
+
+        position: fixed;
+        top: functions.rem(70px);
+        width: (90vw);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

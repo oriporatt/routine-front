@@ -1,0 +1,54 @@
+.card-filter{
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    position: relative;
+    .close-modal{
+        position: absolute;
+        top:8px;
+        right: 10px;
+        height: 25px;
+        width: 25px;
+        path{
+            fill: #1056b9;
+        }
+    }
+
+    .sort-div{
+        display: flex;
+        .sort-btn{
+            margin-left: 10px;
+            padding:0;           // 🔄 better than fixed width
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            // background-color: rgb(230, 227, 227);
+            border-radius: 6px;
+            min-width: 36px;              // ensure it's clickable
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+
+    .buttom-line-btns{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;  
+    }
+    .star-div{
+        display: flex;
+        .star-toggle {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.2s;
+            fill: #4c8eaf;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+}
+
