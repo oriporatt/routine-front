@@ -4,26 +4,116 @@
 
 
 .home-page{
-    
-    .form-input{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-        width: 400px;
-        padding: 10px 0 10px 0;
-        margin: 5px 0 10px 0;
-        h3{
-            margin: 0;
-        }
-        .text-input{
-            width: 80%;
+    #about {
+        scroll-margin-top: 80px; // match your header height
+    }
+    #contact-us-href{
+        scroll-margin-top: 80px; // match your header height
+    }
+    #linky{
+        scroll-margin-top: 80px; // match your header height
+    }
+    #remindme{
+        scroll-margin-top: 80px; // match your header height
+    }
 
+    .about{
+        margin-top: 20px;
+        max-width: 1000px;
+        align-content: center;
+        justify-self: center;
+        h2{
+            font-weight: 700;
         }
-        .submit-btn{
-            width: 50%;
+        span{
+            color:rgb(63, 147, 242);
         }
     }
+    .poducts{
+        display: grid;
+        margin-top: 2rem;
+        gap:2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+    .remind-me{
+        border-radius: 25px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        padding: 2rem;
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        max-width: 1000px;
+
+
+        
+        @media (max-width: 768px) {
+            flex-direction: column;
+            text-align: center;
+        }
+        .remind-me-text-content{
+            flex: 1;
+
+            h2 {
+                font-size: 2rem;
+                color: #333;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 1rem;
+                color: #555;
+                line-height: 1.4;
+            }
+        }
+        .image-wrapper {
+            flex: 1;
+            img {
+                max-width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+        
+    .linky{
+        border-radius: 25px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        padding: 2rem;
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        max-width: 1000px;
+
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            text-align: center;
+        }
+        .linky-text-content{
+            flex: 1;
+
+            h2 {
+                font-size: 2rem;
+                color: #333;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 1rem;
+                color: #555;
+                line-height: 1.4;
+            }
+        }
+        .image-wrapper {
+            flex: 1;
+            img {
+                max-width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+    
 
     @include mixins.for-narrow-layout{
 

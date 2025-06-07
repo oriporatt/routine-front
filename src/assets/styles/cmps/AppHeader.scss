@@ -19,12 +19,12 @@
 
     .header-elements {
     
-        display: grid;
+        display: flex;
+        gap: space-between;
         height: 4rem;
         align-items: center;
         background-color: variables.$white;
-        justify-items: center;
-    
+        justify-content: space-between;
         .logo{
             display: flex;
             text-decoration: none;
@@ -52,6 +52,19 @@
 
             }
 
+        }
+
+        .header-links{
+            display: flex;
+            gap:20px;
+            a{
+                size: 16px;
+                &:hover{
+                    text-decoration: none;
+                    cursor: pointer;
+                    color:rgb(63, 147, 242);
+                }
+            }
         }
 
     }

@@ -1,94 +1,49 @@
 import { useEffect,useRef,useState} from "react";
 import { useDispatch,useSelector} from 'react-redux'
 import { useNavigate } from "react-router";
-import { TextField, Button, Box, Typography, Alert } from '@mui/material';
-
+import { ContactUs } from "../cmps/ContactUs";
 
 export function HomePage() {
     const navigate = useNavigate()
 	const dispatch = useDispatch()
-    const [status, setStatus] = useState('idle');
-
-    async function handleSubmit(e) {
-        e.preventDefault();
-        setStatus('sending');
-
-        const formData = new FormData(e.target);
-
-        try {
-        const res = await fetch("https://formsubmit.co/241dc238ae23b2707b70024f1ceb1de8", {
-            method: "POST",
-            body: formData,
-            headers: {
-            Accept: "application/json"
-            }
-        });
-
-        if (res.ok) {
-            setStatus('sent');
-            e.target.reset();
-        } else {
-            setStatus('error');
-        }
-        } catch (err) {
-        setStatus('error');
-        }
-    };
-
+    
 
     return (
-  <section className="home-page">
-      <h4>Automations.Routines.AI</h4>
-      <form onSubmit={handleSubmit} className="form-input">
-        <h3>Leave your details here</h3>
-        <h3>We will get back to you soon</h3>
+    <section className="home-page">
+        {/* <h4>Automations.Routines.AI</h4> */}
 
-        <TextField
-            className="text-input"
-            name="name"
-            label="Name"
-            variant="outlined"
-            required
-            margin="normal"
-        />
-        <TextField
-            className="text-input"
-            name="email"
-            label="Email"
-            type="email"
-            variant="outlined"
+        <div className="poducts">
+              
+            <div id="remindme" className="remind-me">
+                <div className="image-wrapper">
+                    <img src="/img/remindme.jpg" alt="RemindMe Bot Screenshot" />
+                </div>                
+                <div className="remind-me-text-content">
+                    <h2>RemindMe</h2>
+                    <p>RemindMe is your smart WhatsApp assistant for remembering crucial tasks and routines, like taking medication. With support for voice, images, and natural reminders, it helps you get things done effortlessly.</p> 
+                </div>
 
-            //   fullWidth
-            required
-            margin="normal"
-        />
-        <TextField
-            className="text-input"
-            name="message"
-            label="Details"
-            multiline
-            rows={4}
-            variant="outlined"
-            margin="normal"
 
-        />
+            </div>
 
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_subject" value="New Message from Routine AI!" />
+            <div id="linky" className="linky">
+                <div className="image-wrapper">
+                    <img src="/img/linky.jpg" alt="RemindMe Bot Screenshot" />
+                </div>  
+                <div className="linky-text-content">
+                    <h2>Linky</h2>
+                    <p>Linky is your smart WhatsApp link manager — helping you store, organize, and quickly retrieve important links before they get lost.</p> 
+                </div>
 
-        <Button type="submit" 
-            variant="contained" color="primary" 
-            className="submit-btn"
+            </div>
+        </div>
 
-        >
-          Send
-        </Button>
-        
-        {status === 'sending' && <p>Sending...</p>}
-        {status === 'sent' && <p style={{ color: 'green' }}>✅ Sent successfully!</p>}
-        {status === 'error' && <p style={{ color: 'red' }}>❌ Failed to send. Try again.</p>}
-      </form>
+        <div id="about" className="about">
+            <h2>About Us</h2>
+            <p>At <span>Routine AI</span> we specialize in building smart automation tools that help individuals and businesses streamline their daily routines. Whether it's a WhatsApp bot that reminds you to take your medication, a link-saving assistant to organize your online content, or custom workflows for habit tracking and task management — our mission is to make routine tasks smarter, faster, and more reliable. </p>
+        </div>
 
+        < ContactUs />
     </section>
     )
 }

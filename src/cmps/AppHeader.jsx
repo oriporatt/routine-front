@@ -26,9 +26,13 @@ export function AppHeader() {
 					<p className="linky-logo">Routine AI</p>
 				</NavLink>
 
-				{/* <nav>
-					<NavLink className='gig-link' to="gig">Explore</NavLink>
-				</nav> */}
+				<nav className='header-links'>
+					<a className='remindme-link' href="#remindme">RemindMe</a>
+					<a className='linky-link' href='#linky'>Linky</a>
+					<a className='about-us-link' href="#about" >About</a>
+					<a className='contact-us-link' href='#contact-us-href' >Contact Us</a>
+					{/* <NavLink className='contact-us-link' >Contact Us</NavLink> */}
+				</nav>
 			</div>
 		
 		</header>
